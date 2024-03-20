@@ -1,0 +1,45 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "H:\My Documents\Downloads\ADS\AUDIO\audio.qsys" --block-symbol-file --output-directory="H:\My Documents\Downloads\ADS\AUDIO\audio" --family="Cyclone V" --part=5CEBA2F17A7
+Progress: Loading AUDIO/audio.qsys
+Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 18.0]
+Progress: Parameterizing module audio_0
+Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 18.0]
+Progress: Parameterizing module audio_pll_0
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: audio.audio_0: Interrupt sender audio_0.interrupt is not connected to an interrupt receiver
+Warning: audio.: You have exported the interface audio_0.avalon_audio_slave but not its associated clock interface.  Export the driver of audio_0.clk
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "H:\My Documents\Downloads\ADS\AUDIO\audio.qsys" --synthesis=VHDL --output-directory="H:\My Documents\Downloads\ADS\AUDIO\audio\synthesis" --family="Cyclone V" --part=5CEBA2F17A7
+Progress: Loading AUDIO/audio.qsys
+Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 18.0]
+Progress: Parameterizing module audio_0
+Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 18.0]
+Progress: Parameterizing module audio_pll_0
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: audio.audio_0: Interrupt sender audio_0.interrupt is not connected to an interrupt receiver
+Warning: audio.: You have exported the interface audio_0.avalon_audio_slave but not its associated clock interface.  Export the driver of audio_0.clk
+Info: audio: Generating audio "audio" for QUARTUS_SYNTH
+Info: audio_0: Starting Generation of Audio Controller
+Info: audio_0: "audio" instantiated altera_up_avalon_audio "audio_0"
+Info: audio_pll_0: "audio" instantiated altera_up_avalon_audio_pll "audio_pll_0"
+Info: rst_controller: "audio" instantiated altera_reset_controller "rst_controller"
+Info: audio_pll: "audio_pll_0" instantiated altera_pll "audio_pll"
+Info: reset_from_locked: "audio_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: audio: Done "audio" with 6 modules, 14 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
