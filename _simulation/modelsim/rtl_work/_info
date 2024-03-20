@@ -1,0 +1,115 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/My Documents/Downloads/ADS/AUDIO/simulation/modelsim
+Eaudiocontroller
+Z1 w1710895426
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8H:/My Documents/Downloads/ADS/AUDIO/audioController.vhd
+Z6 FH:/My Documents/Downloads/ADS/AUDIO/audioController.vhd
+l0
+L67 1
+V>KY44:]^jP6HeoB<aGL=o3
+!s100 >P3bo1GOgP]TkIYnd]lQ63
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1710896039
+!i10b 1
+Z9 !s108 1710896039.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|H:/My Documents/Downloads/ADS/AUDIO/audioController.vhd|
+Z11 !s107 H:/My Documents/Downloads/ADS/AUDIO/audioController.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Asoundgen
+R2
+R3
+R4
+DEx4 work 15 audiocontroller 0 22 >KY44:]^jP6HeoB<aGL=o3
+!i122 0
+l102
+L76 54
+VMh38@;cA3YQBhfeT2d^Lf1
+!s100 8ke[ECC7HLATcIGTSTJjZ3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etestbench
+Z14 w1710895990
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z16 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z17 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z18 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 3HQPc5MVbmOPN?>a5EBYj2
+Z19 DPx8 cyclonev 19 cyclonev_components 0 22 jZ]H46BQLgIP5mfRTO`3B1
+Z20 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ^Ch;U@;bMk1;>A2B<UV`k2
+Z21 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z22 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+Z23 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+R3
+R4
+Z24 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 1
+R0
+Z25 8H:/My Documents/Downloads/ADS/AUDIO/simulation/modelsim/testBench.vhd
+Z26 FH:/My Documents/Downloads/ADS/AUDIO/simulation/modelsim/testBench.vhd
+l0
+L14 1
+VmN;FG;bn?YDAPM:mNISJF1
+!s100 Dc1`I=jSHHlKFE]QPImLP0
+R7
+31
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-93|-work|work|H:/My Documents/Downloads/ADS/AUDIO/simulation/modelsim/testBench.vhd|
+!s107 H:/My Documents/Downloads/ADS/AUDIO/simulation/modelsim/testBench.vhd|
+!i113 1
+R12
+R13
+Atestbench_arch
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+R3
+R4
+R24
+DEx4 work 9 testbench 0 22 mN;FG;bn?YDAPM:mNISJF1
+!i122 1
+l29
+L17 69
+Vm]TYgKaXQ9zJFLb99H`fa1
+!s100 5X9GIz417iedI?J^0QVIj1
+R7
+31
+R8
+!i10b 1
+R9
+R27
+Z28 !s107 H:/My Documents/Downloads/ADS/AUDIO/simulation/modelsim/testBench.vhd|
+!i113 1
+R12
+R13
