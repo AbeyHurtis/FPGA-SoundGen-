@@ -1,3 +1,15 @@
+# DE-10 Standard Audio Codec
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/DE-10.PNG?raw=true)
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731-DE10.PNG)
+# WM8731 Diagram
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731.PNG?raw=true)
+# Pin Discriptions for WM8731 
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM873_PIN.PNG?raw=true)
+# Slave Mode Timing Diagram 
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagramWM8731.PNG)
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table.PNG)
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table2.PNG)
+
 # Code from audio_gen.vhd
 ```vhdl
 process(aud_clock)
