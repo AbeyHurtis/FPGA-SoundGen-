@@ -3,6 +3,13 @@ audio Generator -> audio_gen.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/b
 # DE-10 Standard Audio Codec
 ![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/DE-10.PNG?raw=true)
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731-DE10.PNG)
+
+# I2C Multiplexer 
+The DE10-Standard board implements an I2C multiplexer for HPS to access the I2C bus originally owned by FPGA.   
+HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` signal is set to high 
+
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2C_Diagram.PNG)
+
 # WM8731 Diagram
 ![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731.PNG?raw=true)
 # Pin Discriptions for WM8731 
