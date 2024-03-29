@@ -1,5 +1,5 @@
-Top level entity -> audioController.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/blob/main/audioController.vhd")  
-audio Generator -> audio_gen.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/blob/main/audio_gen.vhd")
+Top Level Entity -> audioController.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/blob/main/audioController.vhd")  
+Audio Generator -> audio_gen.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/blob/main/audio_gen.vhd")
 # DE-10 Standard Audio Codec
 ![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/DE-10.PNG?raw=true)
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731-DE10.PNG)
