@@ -104,35 +104,6 @@ port (
 end audioController;
 
 architecture soundGen of audioController is
-
-    -- type frequency_array is array(0 to 2) of integer range 0 to 500;
-    --type frequency_array is array (natural range <>) of sfixed(7 downto -8); -- Fixed-point array type
-    --    signal data_array : FixedArray(0 to 100);
-	 
-	-- type frequency_array1 is array(0 to 8) of INTEGER range 0 to 600;
-	type frequency_array1 is array(0 to 8) of std_logic_vector(31 downto 0);
-    -- signal counter1 : frequency_array1 := (500, 560, 596, 592, 549, 487, 430, 401, 414);
-    
-    -- signal counter1 : frequency_array1 := ("0000000111110100", "0000001000110000", "0000001001010100", "0000001001010000", "0000001000100101", "0000000111100111", "0000000110101110", "0000000110010001", "0000000110100110");
-	 -- 9 (0 to 8)
-
-	type frequency_array2 is array(0 to 18) of std_logic_vector(31 downto 0);
-    -- signal counter2: frequency_array2 :=(500, 532, 560, 583, 596, 599, 592, 575, 549, 519, 487, 456,
-    -- 430, 411, 401, 402, 414, 435, 462);
-    -- signal counter2: frequency_array2 :=("0000000111110100", "0000001000010100", "0000001000110000", 
-                                        -- "0000001001000111", "0000001001010100", "0000001001010111", "0000001001010000", "0000001000111111", "0000001000100101", "0000001000000111", 
-                                        -- "0000000111100111", "0000000111011000", "0000000110101110", "0000000110011011", "0000000110010001", "0000000110010010", "0000000110100110", "0000000110101011", "0000000111001110");
-
-	-- 19 (0 to 18)
-	type frequency_array3 is array(0 to 12) of std_logic_vector(31 downto 0);
-    -- signal counter3: frequency_array3 :=(500, 544, 579, 598, 596, 575, 538, 494, 451, 417, 401, 406,
-    -- 430);
-    -- signal counter3: frequency_array3 :=("0000000111110100", "0000001000100000", "0000001001000011", "0000001001011110", 
-                                        -- "0000001001010100", "0000001000111111", "0000001000011010", "0000000111100110", "0000000111000011", 
-                                        -- "0000000110100001", "0000000110010001", "0000000110010110", "0000000110101110");
-
-	-- 13 (0 to 12)
-
     signal sound_on : std_logic:= '0';
     signal counter : STD_LOGIC_VECTOR (9 downto 0) := "1111111111";
     signal index1 : natural := 0;
@@ -143,73 +114,47 @@ architecture soundGen of audioController is
     signal WM_i2c_send_flag: std_logic;
     signal WM_i2c_data: std_logic_vector(15 downto 0);
     signal audio_pll_0_audio_clk_clk      : std_logic;
-    signal DA_CLR: std_logic:='0';
+    signal DA_CLR: std_logic;
     signal count_tw: integer range 0 to 2:=0;
     signal clock_12: std_logic:= '0'; 
-    signal mil_count: integer range 0 to 12000000:=0; 
-    -- constant ARRAY_SIZE1 : natural := counter1'length;
-    -- constant ARRAY_SIZE2 : natural := counter2'length;
-    -- constant ARRAY_SIZE3 : natural := counter3'length;
+    signal mil_count: integer range 0 to 12000000:=0;
     signal test: std_logic:='0';
     signal selected_frequency: std_logic:='0';
-
-    component audio_audio_pll_0 is
-		port (
-			ref_clk_clk        : in  std_logic := 'X'; -- clk
-			ref_reset_reset    : in  std_logic := 'X'; -- reset
-			audio_clk_clk      : out std_logic;        -- clk
-			reset_source_reset : out std_logic         -- reset
-		);
-	end component audio_audio_pll_0;
+    signal BIT_CLOCK: std_logic;
+    signal aud_data: std_logic;
 
     component audio_gen is 
     port (
-        aud_clock: in std_logic;
+        master_clock: in std_logic;
+        clock_12_out: out std_logic;
         sw: in std_logic_vector(9 downto 0);
         ledr: OUT std_logic; 
         aud_bk: out std_logic;
         aud_dalr: out std_logic;
-        aud_data: out std_logic
+        aud_data_out: out std_logic
     );
     end component audio_gen; 
-begin
-    
-    -- audio_pll_0 : component audio_audio_pll_0
-    --             port map (
-    --                 ref_clk_clk        => CLOCK_50,                   --      ref_clk.clk
-    --                 ref_reset_reset    => '1',   --    ref_reset.reset
-    --                 audio_clk_clk      => audio_pll_0_audio_clk_clk, --    audio_clk.clk
-    --                 reset_source_reset => open                       -- reset_source.reset
-    --             );
 
+begin
     aud_g: component audio_gen
                 port map(
-                    aud_clock=>clock_12,
+                    master_clock=>CLOCK_50,
+                    clock_12_out=>clock_12,
                     sw=>SW,
                     ledr=>LEDR(0),
-                    aud_bk=>AUD_BCLK,
+                    aud_bk=>BIT_CLOCK,
                     aud_dalr=>DA_CLR,
-                    aud_data=>AUD_DACDAT
+                    aud_data_out=>aud_data
                 );
 
-    AUD_XCK<=clock_12;
-    AUD_DACLRCK<=DA_CLR;
-    FPGA_I2C_SCLK<='1';
-
-
-process(CLOCK_50)
-begin 
-    if rising_edge(CLOCK_50) then 
-        if(count_tw<1) then 
-            count_tw <= count_tw + 1; 
-        else 
-            count_tw<=0;
-            clock_12 <= not clock_12; 
-        end if; 
-    end if;
-end process;
+AUD_XCK<=clock_12;
+AUD_BCLK<=BIT_CLOCK; 
+AUD_DACLRCK<=DA_CLR;
+FPGA_I2C_SCLK<='1';
+AUD_DACDAT<=aud_data;
 
 LEDR(1) <= test; 
+
 process(clock_12)
 begin 
     if rising_edge(clock_12) then 
@@ -221,42 +166,6 @@ begin
         end if; 
     end if; 
 end process; 
-
-
-
-
-
-    -- process(CLOCK_50)
-    -- begin
-    --     if falling_edge(CLOCK_50) then 
-    --         if SW(0) = '1' then
-    --             AUD_DACDAT<=aud_out(index1);
-    --             index1 <= (index1+1) mod 32; 
-    --         -- LEDR(0)<= NOT sound_on after 10000 ms;
-    --             LEDR(0) <= '1';
-    --             -- if i=0 then  
-    --             --     index1 <= (index1 + 1) mod ARRAY_SIZE1;
-    --             --     -- aud_out <= counter1(index1);
-    --             -- end if;
-    --             -- if i=1 then  
-    --             --     index2 <= (index2 + 1) mod ARRAY_SIZE2;
-    --             --     -- aud_out <= counter2(index2);
-    --             -- end if;
-    --             -- if i=2 then  
-    --             --     index3 <= (index3 + 1) mod ARRAY_SIZE3;
-    --             --     -- aud_out <= counter3(index3);
-    --             -- end if;
-    --             -- -- AUD_DACDAT <= 1; 
-
-    --         else
-    --             LEDR(0) <= '0';
-    --         end if;
-    --         -- end loop;
-    --         -- -- LEDR <= counter;
-    --         -- elsif CLOCK_50='0' then 
-    --         --     AUD_DACLRCK<='1';
-    --     end if; 
-    -- end process; 
 end soundGen;
     
 
