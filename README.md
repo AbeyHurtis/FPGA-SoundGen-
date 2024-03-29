@@ -1,4 +1,4 @@
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/1.jpg?raw=true)
+# Code from audio_gen.vhd
 ```vhdl
 process(aud_clock)
 begin 
@@ -19,8 +19,8 @@ begin
 end process;
 ```
 
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/2.jpg?raw=true)
-
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/1.jpg?raw=true)
+# Code from audio_gen.vhd
 ```vhdl
         if (bk_count<16) then 
             bk_count<=bk_count+1;
@@ -31,7 +31,9 @@ end process;
         end if; 
 ```
 
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/3.jpg?raw=true)
+
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/2.jpg?raw=true)
+# Code from audio_gen.vhd
 ```vhdl
 process(data_clock)
 begin 
@@ -47,17 +49,22 @@ begin
         end if; 
 end process;
 ````
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/4.jpg?raw=true)
 
-Matlab Code for generating 1000 samples 
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/3.jpg?raw=true)
+
+# Matlab Code for generating 1000 samples 
 ```matlab
 for i =1:1000
     B(i)=sin(2*pi*1000*i/48000);
 end
 sound(B,48000)
 x = dec2bin(B, 32)
-
 ```
+
+
+![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/4.jpg?raw=true)
+
+# Code from audio_gen.vhd
 data used to stream to AUD_DACDAT
 ```vhdl
   type BinArrray is array(0 to 999) of std_logic_vector(31 downto 0);
