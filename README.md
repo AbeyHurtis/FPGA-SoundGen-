@@ -139,7 +139,7 @@ data used to stream to AUD_DACDAT
 ```
 
 # Reference Documents  
-DE10-Standard Manuel -> "https://ftp.intel.com/Public/Pub/fpgaup/pub/Intel_Material/Boards/DE10-Standard/DE10_Standard_User_Manual.pdf"
-WM8731 Auudio Codec -> "https://cdn.sparkfun.com/datasheets/Dev/Arduino/Shields/WolfsonWM8731.pdf"
-Schematic -> "https://www.rocketboards.org/foswiki/pub/Documentation/DE10Standard/DE10-Standard_Schematic.pdf"
+DE10-Standard Manuel -> "https://ftp.intel.com/Public/Pub/fpgaup/pub/Intel_Material/Boards/DE10-Standard/DE10_Standard_User_Manual.pdf"  
+WM8731 Auudio Codec -> "https://cdn.sparkfun.com/datasheets/Dev/Arduino/Shields/WolfsonWM8731.pdf"  
+Schematic -> "https://www.rocketboards.org/foswiki/pub/Documentation/DE10Standard/DE10-Standard_Schematic.pdf"  
 
