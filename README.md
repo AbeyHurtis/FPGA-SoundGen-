@@ -43,7 +43,7 @@ for i =1:1000
     B(i)=sin(2*pi*1000*i/48000);
 end
 sound(B,48000)
-x = dec2bin(B, 32)
+x = dec2bin(B, 24)
 ```
 
 
