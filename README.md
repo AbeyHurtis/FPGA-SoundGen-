@@ -19,6 +19,29 @@ HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` s
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table.PNG)
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table2.PNG)
 
+
+# Default Modes of operations 
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/Defaults.PNG)
+
+# I^2 S Oeration Cycles
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S.PNG)
+
+# I2S communication 
+![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S_data.PNG)
+
+
+
+**From the Defaults we can identify that the following information about WM8731**  
+* operating mode for WM8731 : I2S  
+* Input Audio Data Bit Length : 24 bits  
+* Data Clock (DACLRC) :
++ 0 -> Left Channel  
++ 1 -> Right Channel   
+* Master Slave Mode Control : Slave Mode  
+
+
+
+
 # Code from audio_gen.vhd
 ```vhdl
 process(aud_clock)
