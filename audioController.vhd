@@ -73,8 +73,6 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity audioController is 
 port (
-        aud_out: std_logic_vector(31 downto 0):="00000000000000000000000000111111";
-    
         ----WM8731_PINS-----
         -- Table 14
         -- software control table
@@ -92,7 +90,6 @@ port (
         AUD_DACLRCK: out std_logic;
     
         ----FPGA_PINS-----
-        SW : IN STD_LOGIC_VECTOR (9 downto 0);
         LEDR: OUT STD_LOGIC_VECTOR (9 downto 0); 
 
         CLOCK_50 : in STD_LOGIC;
@@ -127,8 +124,8 @@ architecture soundGen of audioController is
     port (
         master_clock: in std_logic;
         clock_12_out: out std_logic;
-        sw: in std_logic_vector(9 downto 0);
-        ledr: OUT std_logic; 
+        ledr: OUT std_logic;
+        keys: in std_logic_vector(3 downto 0); 
         aud_bk: out std_logic;
         aud_dalr: out std_logic;
         aud_data_out: out std_logic
@@ -140,15 +137,15 @@ begin
                 port map(
                     master_clock=>CLOCK_50,
                     clock_12_out=>clock_12,
-                    sw=>SW,
                     ledr=>LEDR(0),
+                    keys=>KEY,
                     aud_bk=>BIT_CLOCK,
                     aud_dalr=>DA_CLR,
                     aud_data_out=>aud_data
                 );
 
 AUD_XCK<=clock_12;
-AUD_BCLK<=BIT_CLOCK; 
+AUD_BCLK<=BIT_CLOCK;
 AUD_DACLRCK<=DA_CLR;
 FPGA_I2C_SCLK<='1';
 AUD_DACDAT<=aud_data;
