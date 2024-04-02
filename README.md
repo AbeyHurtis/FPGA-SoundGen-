@@ -34,7 +34,7 @@ HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` s
 # I^2 S Operation Cycles
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S.PNG)
 
-# I2S communication 
+# I2C communication 
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S_data.PNG)
 
 # Matlab Code for generating 1000 samples 
