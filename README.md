@@ -31,7 +31,7 @@ HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` s
     + 1 -> Right Channel   
 * Master Slave Mode Control : Slave Mode  
 
-# I^2 S Oeration Cycles
+# I^2 S Operation Cycles
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S.PNG)
 
 # I2S communication 
