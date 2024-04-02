@@ -23,7 +23,7 @@ HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` s
 # Default Modes of operations 
 ![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/Defaults.PNG)
 
-# From the Defaults we can identify that the following information about WM8731
+# From the Default modes of operations we can identify that the following information about WM8731
 * Operating mode (WM8731) : I2S  
 * Input Audio Data Bit Length : 24 bits  
 * Data Clock (DACLRC) :
