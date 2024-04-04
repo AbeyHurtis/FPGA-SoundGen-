@@ -46,6 +46,17 @@ sound(B,48000)
 x = dec2bin(B, 24)
 ```
 
+# Clock Construction
++ Master Clock of SoC - > 50MHz --> 1/50MH 20ns
+
++ DACLRC --> 1/50KHZ (50KHZ output audio frequency) 20 ms
+            half cycle = 10ms
+            therefore 10/20 = 520 cycles of the Master Clock.
+            
++ AUD_BCLK --> 24bits (DACLRC -> 10ms(Half Cycle)/50KHZ(audio output frequency)) --> 10 counts of master clock. 
+        
+        
+            
 
 # Reference Documents  
 DE10-Standard Manuel -> "https://ftp.intel.com/Public/Pub/fpgaup/pub/Intel_Material/Boards/DE10-Standard/DE10_Standard_User_Manual.pdf"  
