@@ -1,27 +1,27 @@
-Top Level Entity -> audioController.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/blob/main/audioController.vhd")  
-Audio Generator -> audio_gen.vhd ("https://github.com/Abey12525/FPGA-SoundGen-/blob/main/audio_gen.vhd")
+Top Level Entity -> audioController.vhd ("https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/audioController.vhd")  
+Audio Generator -> audio_gen.vhd ("https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/audio_gen.vhd")
 # DE-10 Standard Audio Codec
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/DE-10.PNG?raw=true)
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731-DE10.PNG)
+![alt text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/DE-10.PNG?raw=true)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731-DE10.PNG)
 
 # I2C Multiplexer 
 The DE10-Standard board implements an I2C multiplexer for HPS to access the I2C bus originally owned by FPGA.   
 HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` signal is set to high 
 
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2C_Diagram.PNG)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2C_Diagram.PNG)
 
 # WM8731 Diagram
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731.PNG?raw=true)
+![alt text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM8731.PNG?raw=true)
 # Pin Discriptions for WM8731 
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM873_PIN.PNG?raw=true)
+![alt text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/WM873_PIN.PNG?raw=true)
 # Slave Mode Timing Diagram 
-![alt text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagramWM8731.PNG)
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table.PNG)
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table2.PNG)
+![alt text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagramWM8731.PNG)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table.PNG)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/TimingDiagram_Table2.PNG)
 
 
 # Default Modes of operations 
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/Defaults.PNG)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/Defaults.PNG)
 
 # From the Default modes of operations we can identify that the following information about WM8731
 * Operating mode (WM8731) : I2S  
@@ -32,10 +32,10 @@ HPS can access Audio CODEC and TV Decoder if and only if the `HPS_I2C_CONTROL` s
 * Master Slave Mode Control : Slave Mode  
 
 # I^2 S Operation Cycles
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S.PNG)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S.PNG)
 
 # I2C communication 
-![alt_text](https://github.com/Abey12525/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S_data.PNG)
+![alt_text](https://github.com/AbeyHurtis/FPGA-SoundGen-/blob/main/TestBenchScreenShots/I2S_data.PNG)
 
 # Matlab Code for generating 1000 samples 
 ```matlab
